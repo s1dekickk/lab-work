@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+    }
+    
+    .grid-container {
+        display: grid;
+        grid-template-rows: auto 1fr auto; 
+        grid-template-columns: 200px 1fr 150px; 
+        grid-template-areas:
+            "header  header  header"
+            "sideA   main    sideB"
+            "footer  footer  footer";
+        min-height: 100vh;
+        border: 4px solid #cc9966; 
+        background-color: #f4e4c9; 
+    }
+
+    .header { 
+        grid-area: header; 
+        background-color: white; 
+        padding: 20px;
+        border-bottom: 1px solid #c9a475; 
+    }
+
+    .sidebar-a { 
+        grid-area: sideA; 
+        background-color: white; 
+        padding: 15px;
+        border-right: 1px solid #c9a475;
+    }
+
+    .main-content { 
+        grid-area: main; 
+        background-color: white; 
+        padding: 15px;
+    }
+
+    .sidebar-b { 
+        grid-area: sideB; 
+        background-color: white; 
+        padding: 15px;
+        border-left: 1px solid #c9a475;
+    }
+
+    .footer { 
+        grid-area: footer; 
+        background-color: white; 
+        padding: 20px;
+        text-align: center;
+        border-top: 1px solid #c9a475;
+    }
+    
+    
+    .grid-container > * {
+        border: 1px solid #c9a475;
+    }
+</style>
+</head>
+<body>
+    <div class="grid-container">
+        <header class="header">Header</header>
+        <aside class="sidebar-a">Sidebar A</aside>
+        <main class="main-content">Main content</main>
+        <aside class="sidebar-b">Sidebar B</aside>
+        <footer class="footer">Footer</footer>
+    </div>
+</body>
+</html>
